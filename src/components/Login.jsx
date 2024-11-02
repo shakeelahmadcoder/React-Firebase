@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { signInWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { app } from '../Firebase';
-import { useNavigate } from 'react-router-dom';
+import { json, useNavigate } from 'react-router-dom';
 const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail]  =  useState('');
@@ -24,6 +24,7 @@ const Login = () => {
             console.log(res)
         }).catch(err=>{
             console.log(err)
+            
         })
     }
   return (
